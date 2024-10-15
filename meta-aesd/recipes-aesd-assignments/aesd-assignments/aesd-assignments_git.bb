@@ -29,7 +29,7 @@ FILES:${PN} += "${bindir}/aesdsocket"
 TARGET_LDFLAGS += "-pthread -lrt"
 
 do_configure () {
-	:
+	export CROSS_COMPILE="aarch64-none-linux-gnu-"
 }
 
 do_compile () {
