@@ -27,6 +27,8 @@ FILES:${PN} += "${bindir}/aesdsocket"
 # TODO: customize these as necessary for any libraries you need for your application
 # (and remove comment)
 TARGET_LDFLAGS += "-pthread -lrt"
+# Avoid QA error "aesd-assignments doesn't have GNU_HASH"
+TARGET_CC_ARCH += "${LDFLAGS}"
 
 do_configure () {
 	export CROSS_COMPILE="aarch64-none-linux-gnu-"
